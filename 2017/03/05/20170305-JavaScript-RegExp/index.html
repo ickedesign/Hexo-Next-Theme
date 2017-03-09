@@ -87,12 +87,16 @@
 
 
 
-<meta name="description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法">
+<meta name="description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法
+
+正则表达式简介Regular Expression，即正则表达式。使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript正则表达式基础归纳">
 <meta property="og:url" content="http://icke.site/2017/03/05/20170305-JavaScript-RegExp/index.html">
 <meta property="og:site_name" content="标标的博客 | Icke Blog">
-<meta property="og:description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法">
+<meta property="og:description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法
+
+正则表达式简介Regular Expression，即正则表达式。使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。">
 <meta property="og:image" content="http://img.blog.csdn.net/20170121011345132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSWNrZU1veWVy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170121175619196">
 <meta property="og:image" content="http://img.blog.csdn.net/20170121175856903">
@@ -124,10 +128,12 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20170125185209660">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125185936149">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125200028285">
-<meta property="og:updated_time" content="2017-03-09T06:44:44.849Z">
+<meta property="og:updated_time" content="2017-03-09T16:01:05.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript正则表达式基础归纳">
-<meta name="twitter:description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法">
+<meta name="twitter:description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法
+
+正则表达式简介Regular Expression，即正则表达式。使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170121011345132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSWNrZU1veWVy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -461,9 +467,9 @@
       
         <blockquote class="blockquote-center"><p><strong>归纳包含以下内容：</strong><br>正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法</p>
 </blockquote>
-<a id="more"></a>
 <h4 id="正则表达式简介"><a href="#正则表达式简介" class="headerlink" title="正则表达式简介"></a>正则表达式简介</h4><p>Regular Expression，即正则表达式。使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</p>
 <hr>
+<a id="more"></a>
 <h4 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h4><p>在线显示正则表达式的图形工具<a href="http://regexper.com." target="_blank" rel="external">^footnote</a>：<a href="http://regexper.com" target="_blank" rel="external">regexper官网</a></p>
 <p>以下为Sublime使用的三种演示：</p>
 <p>首先，在sublime中，使用快捷键ctrl+h打开replace窗口，再点击“*”，这样就可以在Sublime的输入框中输入正则表达式来查找字段</p>
@@ -980,7 +986,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -991,7 +997,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
