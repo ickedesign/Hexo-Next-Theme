@@ -1,0 +1,1213 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Canvas,JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="演示(ˉ▽￣～) &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; 文件(,,• ₃ •,,)&amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp;汁源╭( ･ㅂ･)و ̑̑ 
+
+Foreword
+关于Canvas
+
+HTML5 &amp;lt;canvas&amp;gt; 标签用于绘制图像（通过脚本，通常是 JavaScript）。不过，&amp;lt;canvas&amp;gt;元素本身并没有绘制能力（它仅仅是图形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas绚丽倒计时学习笔记">
+<meta property="og:url" content="http://icke.site/2017/03/09/20170309-Canvas-Countdown/index.html">
+<meta property="og:site_name" content="标标的博客 | Icke Blog">
+<meta property="og:description" content="演示(ˉ▽￣～) &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; 文件(,,• ₃ •,,)&amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp;汁源╭( ･ㅂ･)و ̑̑ 
+
+Foreword
+关于Canvas
+
+HTML5 &amp;lt;canvas&amp;gt; 标签用于绘制图像（通过脚本，通常是 JavaScript）。不过，&amp;lt;canvas&amp;gt;元素本身并没有绘制能力（它仅仅是图形">
+<meta property="og:image" content="http://icke.site/images/post-img/GorgeousCountdown-Sketch.png">
+<meta property="og:image" content="http://icke.site/images/post-img/Canvas-Tangram.png">
+<meta property="og:updated_time" content="2017-03-09T15:23:53.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas绚丽倒计时学习笔记">
+<meta name="twitter:description" content="演示(ˉ▽￣～) &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; 文件(,,• ₃ •,,)&amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp;汁源╭( ･ㅂ･)و ̑̑ 
+
+Foreword
+关于Canvas
+
+HTML5 &amp;lt;canvas&amp;gt; 标签用于绘制图像（通过脚本，通常是 JavaScript）。不过，&amp;lt;canvas&amp;gt;元素本身并没有绘制能力（它仅仅是图形">
+<meta name="twitter:image" content="http://icke.site/images/post-img/GorgeousCountdown-Sketch.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6392596067984082000',
+      author: '小学生'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icke.site/2017/03/09/20170309-Canvas-Countdown/"/>
+
+
+
+
+
+  <title> Canvas绚丽倒计时学习笔记 | 标标的博客 | Icke Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-92921333-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f944b2dd33cbed8ecdfd058fc7893116";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">标标的博客 | Icke Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Front-End Learner</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://icke.site/2017/03/09/20170309-Canvas-Countdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Icke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="标标的博客 | Icke Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Canvas绚丽倒计时学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T13:14:50+08:00">
+                2017-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/09/20170309-Canvas-Countdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/20170309-Canvas-Countdown/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/03/09/20170309-Canvas-Countdown/" class="leancloud_visitors" data-flag-title="Canvas绚丽倒计时学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><a href="https://ickebemiu.github.io/countdown/countdown.html" target="_blank" rel="external">演示(ˉ▽￣～) </a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp; <a href="https://github.com/ickedesign/Canvas_Training/tree/master/001-Canvas%E7%BB%9A%E4%B8%BD%E7%9A%84%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C" target="_blank" rel="external">文件(,,• ₃ •,,)</a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp;<a href="http://www.imooc.com/learn/133" target="_blank" rel="external">汁源╭( ･ㅂ･)و ̑̑ </a></center>
+
+<h4 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h4><blockquote>
+<p>关于Canvas</p>
+</blockquote>
+<p>HTML5 &lt;canvas&gt; 标签用于绘制图像（通过脚本，通常是 JavaScript）。<br>不过，&lt;canvas&gt;元素本身并没有绘制能力（它仅仅是图形的容器）， 您必须使用脚本来完成实际的绘图任务。&nbsp;&nbsp;<em>[该叙述来自<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">W3CSCHOOL</a>]</em></p>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/post-img/GorgeousCountdown-Sketch.png" class="full-image" alt="Gorgeous Countdown" title="Sketch Effect"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<a id="more"></a>
+<h4 id="Creat-Canvas"><a href="#Creat-Canvas" class="headerlink" title="Creat Canvas"></a>Creat Canvas</h4><blockquote>
+<p>创建画布</p>
+</blockquote>
+<ul>
+<li>canvas是行内元素，有默认的高宽（300px*150px）</li>
+<li><code>display: block</code>可以把<code>&lt;canvas&gt;&lt;/canvas&gt;</code>变成块级元素,从而可以通过<code>margin: 0 auto;</code>设置为水平居中    &nbsp;&nbsp;   <em>o(</em>￣▽￣<em>)ブ（水平居中的其中一种方法）</em></li>
+<li><p>canvas有显示的大小，还有内里分辨率的大小，所以不能在css中设置<br>canvas的宽高。可以使用以下两种方法设置</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--直接在标签头设置--&gt;</div><div class="line">&lt;canvas width="1024" height="500"&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在js中设置</span></div><div class="line"><span class="keyword">var</span> canvas=<span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</div><div class="line">canvas.width=<span class="string">"1024"</span>;</div><div class="line">canvas.height=<span class="string">"500"</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&lt;canvas&gt;是HTML5的新标签，所以存在兼容问题。<br>注意：若把判断条件改成<code>canvas.getContext(&quot;2d&quot;)</code>会出错</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(canvas.getContext)&#123;</div><div class="line">	<span class="keyword">var</span> context=canvas.getContext(<span class="string">'2d'</span>); </div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">	alert(<span class="string">'当前浏览器不支持canvas，请更换浏览器后再试'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Draw-Line"><a href="#Draw-Line" class="headerlink" title="Draw Line"></a>Draw Line</h4><blockquote>
+<p>绘制直线</p>
+<p>以下的<code>context</code>，默认由<code>var context=canvas.getContext(&quot;2d&quot;)</code>取得。<br><em>备注：除了2d绘图，还有3d绘图哦&nbsp; &nbsp; (ˉ▽￣～) </em></p>
+</blockquote>
+<ul>
+<li><p><code>context.closePath()</code>的存在会让未闭合的线条自动闭合，所以用不用看情况。总之，一个Canvas画布如果没有使用<code>context.beginPath()</code>，那么画布上的其它图形会受到影响<br></p>
+</li>
+<li><p><code>context.moveTo(x1,y1)</code>用来定义画笔的起始位置<br><code>context.lineTo(x2,y2)</code>用来定义画笔的终止位置</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//画一个闭合图形</span></div><div class="line">context.beginPath();</div><div class="line">context.moveTo(x1,y1);</div><div class="line">context.lineTo(x2,y2);</div><div class="line">context.lineTo(x1,y2);</div><div class="line">context.moveTo(x1,y1);</div><div class="line">context.closePath();</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>context.lineWidth=num</code>定义画笔大小<br><code>context.strokeStyle=&quot;color&quot;</code>定义画笔颜色<br><code>context.stroke()</code> 执行绘图的方法<br><code>context.fillStyle=&quot;color&quot;</code>定义填充的颜色<br><code>context.fill()</code> 执行着色的方法</p>
+</li>
+</ul>
+<p>使用以上方法，即可绘制一个七巧板：<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/post-img/Canvas-Tangram.png" class="full-image" alt="Gorgeous Countdown" title="Canvas Tangram"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<hr>
+<h4 id="Draw-Arc"><a href="#Draw-Arc" class="headerlink" title="Draw Arc"></a>Draw Arc</h4><blockquote>
+<p>绘制弧线</p>
+</blockquote>
+<ul>
+<li><p><code>context.arc(300,300,0,1.5*Math.PI,false)</code> 的含义是沿顺时针的方向来绘制一个圆心为（300，300），角度为1.5π</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">context.arc(centerx,centery,radius,startingAngle,endingAngle,anticlockwise=<span class="literal">false</span>);</div><div class="line"><span class="comment">//默认clockwise=false，即在逆时针的方向上以角度为 0,0.5*PI,1*PI,1.5*PI,2*PI这种形式绘图</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Draw-Digit"><a href="#Draw-Digit" class="headerlink" title="Draw Digit"></a>Draw Digit</h4><blockquote>
+<p>绘制静止的时钟</p>
+</blockquote>
+<ul>
+<li><p>先编写一个三维数组，来显示数字和冒号。这里以0和：来举例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数字有7列10行组成，冒号由4列10行组成，数组中有1的地方就是代表有小球</span></div><div class="line">digit =</div><div class="line">    [</div><div class="line">        [</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]</div><div class="line">        ],<span class="comment">//0</span></div><div class="line">        [</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">            [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</div><div class="line">        ]<span class="comment">//:</span></div><div class="line">    ];</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过循环数组，定义好小球之间的距离，即可画出小球。不过说得容易，逻辑对我们这些初学者有点小复杂。感兴趣可以看下我github上的文件：<em><a href="https://github.com/ickedesign/Canvas_Training/blob/master/001-Canvas%E7%BB%9A%E4%B8%BD%E7%9A%84%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/js/05.drawDigit.js" target="_blank" rel="external">drawDigit.js</a></em></p>
+</li>
+</ul>
+<hr>
+<h4 id="Countdown-Effect"><a href="#Countdown-Effect" class="headerlink" title="Countdown Effect"></a>Countdown Effect</h4><blockquote>
+<p>设置倒计时效果</p>
+</blockquote>
+<ul>
+<li>获取倒计时的时间使用设置好的时间减去现在的时间，这个设置好的时间可以使用<code>new Date()</code>生成，比如<code>const endTime=new Date(2017,2,7,20,14,12)</code>。其中月份是从0开始的，所以这个时间的含义是2017-03-07，20：14：12</li>
+<li><p>也可以使用以下的方法来设置固定的时间，比如倒计时时间固定从1小时开始</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> endTime=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">endTime.setTime(endTime.getTime()+<span class="number">3600</span>*<span class="number">1000</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意分清var、const和let三个定义变量的区别：</p>
+<ul>
+<li>var定义的变量可以修改，如果不初始化会输出undefined，不会报错</li>
+<li>const定义的变量不可以修改，而且必须初始化</li>
+<li>let是块级作用域，函数内部使用let定义后，对函数外部无影响</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="Moving-Clock"><a href="#Moving-Clock" class="headerlink" title="Moving Clock"></a>Moving Clock</h4><blockquote>
+<p>让倒计时动起来</p>
+</blockquote>
+<ul>
+<li>使用setInterval()方法更新，从而数字可以变化而更新生成新的小球的位置<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//添加时钟的动画效果</span></div><div class="line">setInterval(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		render(context);<span class="comment">//初始化时间</span></div><div class="line">		update();<span class="comment">//对时间进行更新</span></div><div class="line">	&#125;,</div><div class="line">	<span class="number">50</span> <span class="comment">//一秒有1000毫秒，即20分之1，</span></div><div class="line">	<span class="comment">//所以帧率为20，即动画1秒钟更新20次。但事实上，因为里面的函数执行效率不同，所以帧数不一定为20</span></div><div class="line">)</div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line"></div><div class="line">* `context.clearRect(x,y,canvasWidth,canvasHeight);<span class="string">`其中x,y指的是清除矩形画布的左上角位置，canvasWidth,canvasHeight指的是清除矩形画布的宽度和长度。使用该函数可以让canvas中后来生成的图形不会和原来的图形叠加在一起了，相反效果的是`</span>context.fillRect()<span class="string">`，其作用是填充矩形，参数类似。</span></div><div class="line">`<span class="string">``</span>js</div><div class="line">context.clearRect(<span class="number">0</span>,<span class="number">0</span>,context.canvas.width,context.canvas.height);</div><div class="line"><span class="comment">//从右上角开始，范围是整个画布</span></div><div class="line"><span class="comment">//使用context.canvas.width来获取canvas的宽度是context的属性之一</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Ball-Motion"><a href="#Ball-Motion" class="headerlink" title="Ball Motion"></a>Ball Motion</h4><blockquote>
+<p>小球的运动</p>
+</blockquote>
+<ul>
+<li>小球的运动很有趣，和高中物理课上的抛物线一样，有初始速度，重力加速度，摩擦系数。</li>
+<li>小球的运动也需要借助setInterval()方法来更新，类似时钟的动画效果</li>
+<li>小球触底后反弹使用<code>if</code>语句来判断<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当小球触底后会反弹</span></div><div class="line"><span class="keyword">if</span>(canvasHeight-ball.y&lt;=ball.r)&#123;</div><div class="line">	ball.y=canvasHeight-ball.r;</div><div class="line">	ball.vy=-ball.vy*<span class="number">0.5</span>;<span class="comment">//添加阻力系数</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Performance-Optimization"><a href="#Performance-Optimization" class="headerlink" title="Performance Optimization"></a>Performance Optimization</h4><blockquote>
+<p>及时清空Canvas画布外面的小球</p>
+</blockquote>
+<ul>
+<li>核心是<code>balls[cnt++]=balls[i]</code>这个表达式，我一开始也是有点懵逼。后来做了下试验就明白了。这个表达式的探讨我放在接下的这篇博文中&nbsp; &nbsp; (・-・*)<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//及时清空跳出画布的小球，优化页面的内存</span></div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;balls.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(balls[i].x+radius&gt;<span class="number">0</span>&amp;&amp;balls[i].x-radius&lt;canvasWidth)&#123;</div><div class="line">		<span class="comment">//小球数组中的第0个到cnt-1个是在canvas画布中</span></div><div class="line">		balls[cnt++]=balls[i];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Math.min();两个数取最小值</span></div><div class="line"><span class="keyword">while</span>(balls.length&gt;<span class="built_in">Math</span>.min(<span class="number">250</span>,cnt))&#123;</div><div class="line">	balls.pop();<span class="comment">//删除第cnt个到balls.length-1个数组</span></div><div class="line">	<span class="comment">//删除前面的数组使用balls.shift();</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Clock-Effect"><a href="#Clock-Effect" class="headerlink" title="Clock Effect"></a>Clock Effect</h4><blockquote>
+<p>将倒计时的效果换成正常时钟效果</p>
+</blockquote>
+<p>*比较简单<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ret=currentTime.getHours()*<span class="number">3600</span>+currentTime.getMinutes()*<span class="number">60</span>+currentTime.getSeconds();</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>纯属个人的笔记，看下慕课网的视频是最好理解的哈。如果有什么笔记写错了，麻烦指出，谢谢同学&nbsp; &nbsp; (o゜▽゜)o☆[BINGO!]</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>“请我吃糖(✿◡‿◡))”</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward.jpg" alt="Icke WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Canvas/" rel="tag"># Canvas</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/05/20170305-JavaScript-RegExp/" rel="next" title="JavaScript正则表达式基础归纳">
+                <i class="fa fa-chevron-left"></i> JavaScript正则表达式基础归纳
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/09/20170309-Canvas-Countdown/"
+     data-title="Canvas绚丽倒计时学习笔记"
+     data-content=""
+     data-url="http://icke.site/2017/03/09/20170309-Canvas-Countdown/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/09/20170309-Canvas-Countdown/"
+           data-title="Canvas绚丽倒计时学习笔记" data-url="http://icke.site/2017/03/09/20170309-Canvas-Countdown/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Icke" />
+          <p class="site-author-name" itemprop="name">Icke</p>
+           
+              <p class="site-description motion-element" itemprop="description">前端、设计、书籍、领悟<br>一起发现更大的世界吧<br>ヾ(o◕∀◕)ﾉヾ</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ickedesign" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/ickedesign" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Foreword"><span class="nav-number">1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Creat-Canvas"><span class="nav-number">2.</span> <span class="nav-text">Creat Canvas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Draw-Line"><span class="nav-number">3.</span> <span class="nav-text">Draw Line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Draw-Arc"><span class="nav-number">4.</span> <span class="nav-text">Draw Arc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Draw-Digit"><span class="nav-number">5.</span> <span class="nav-text">Draw Digit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Countdown-Effect"><span class="nav-number">6.</span> <span class="nav-text">Countdown Effect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Moving-Clock"><span class="nav-number">7.</span> <span class="nav-text">Moving Clock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ball-Motion"><span class="nav-number">8.</span> <span class="nav-text">Ball Motion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Performance-Optimization"><span class="nav-number">9.</span> <span class="nav-text">Performance Optimization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clock-Effect"><span class="nav-number">10.</span> <span class="nav-text">Clock Effect</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄Icke</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ickedesign"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("4f0A6GwrYno7FfbqTfH5u4Yo-gzGzoHsz", "WOvXKV7Qz3HuLHT36c7y1xt3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
