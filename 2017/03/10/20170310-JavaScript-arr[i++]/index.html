@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="志标, Icke, 标标, ickedesign, @ickedesign, 标标的博客, Icke Blog, 博客, 个人网站, 互联网, 前端, 设计" />
+  <meta name="keywords" content="数组," />
 
 
 
@@ -87,15 +87,25 @@
 
 
 
-<meta name="description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标标的博客 | Icke Blog">
-<meta property="og:url" content="http://icke.site/index.html">
+<meta name="description" content="前言
+前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：
+
+123456789101112//及时清空跳出画布的小球，优化页面的内存var cnt=0for(var i=0;i&amp;lt;balls.length;i++)&amp;#123;	if(balls[i].x+radius&amp;gt;0&amp;amp;&amp;amp;balls[i].x-radius&amp;lt;c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于arr[i++]与arr[++i]">
+<meta property="og:url" content="http://icke.site/2017/03/10/20170310-JavaScript-arr[i++]/index.html">
 <meta property="og:site_name" content="标标的博客 | Icke Blog">
-<meta property="og:description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
+<meta property="og:description" content="前言
+前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：
+
+123456789101112//及时清空跳出画布的小球，优化页面的内存var cnt=0for(var i=0;i&amp;lt;balls.length;i++)&amp;#123;	if(balls[i].x+radius&amp;gt;0&amp;amp;&amp;amp;balls[i].x-radius&amp;lt;c">
+<meta property="og:updated_time" content="2017-03-11T05:54:00.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标标的博客 | Icke Blog">
-<meta name="twitter:description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
+<meta name="twitter:title" content="关于arr[i++]与arr[++i]">
+<meta name="twitter:description" content="前言
+前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：
+
+123456789101112//及时清空跳出画布的小球，优化页面的内存var cnt=0for(var i=0;i&amp;lt;balls.length;i++)&amp;#123;	if(balls[i].x+radius&amp;gt;0&amp;amp;&amp;amp;balls[i].x-radius&amp;lt;c">
 
 
 
@@ -123,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://icke.site/"/>
+  <link rel="canonical" href="http://icke.site/2017/03/10/20170310-JavaScript-arr[i++]/"/>
 
 
 
 
 
-  <title> 标标的博客 | Icke Blog </title>
+  <title> 关于arr[i++]与arr[++i] | 标标的博客 | Icke Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -173,9 +183,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -302,9 +310,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -334,10 +342,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/10/20170310-JavaScript-arr[i++]/" itemprop="url">
-                  关于arr[i++]与arr[++i]
-                </a>
+                关于arr[i++]与arr[++i]
               
             
           </h1>
@@ -431,390 +436,146 @@
       
 
       
-        
-          <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
 <p>前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//及时清空跳出画布的小球，优化页面的内存</span></div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;balls.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(balls[i].x+radius&gt;<span class="number">0</span>&amp;&amp;balls[i].x-radius&lt;canvasWidth)&#123;</div><div class="line">		<span class="comment">//小球数组中的第0个到cnt-1个是在canvas画布中</span></div><div class="line">		balls[cnt++]=balls[i];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//删除前面的数组使用balls.shift()</span></div><div class="line"><span class="keyword">while</span>(balls.length&gt;cnt)&#123;</div><div class="line">	balls.pop();<span class="comment">//删除第cnt个到balls.length-1个数组</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>一开始挺懵的，<code>arr[i++]</code>是啥(ﾟｰﾟ)，于是开始一步一步地探索</p>
 <hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/10/20170310-JavaScript-arr[i++]/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://icke.site/2017/03/09/20170309-Canvas-Countdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Icke">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/09/20170309-Canvas-Countdown/" itemprop="url">
-                  Canvas绚丽倒计时学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T13:14:50+08:00">
-                2017-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/09/20170309-Canvas-Countdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/20170309-Canvas-Countdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/03/09/20170309-Canvas-Countdown/" class="leancloud_visitors" data-flag-title="Canvas绚丽倒计时学习笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center><a href="https://ickebemiu.github.io/countdown/countdown.html">演示(ˉ▽￣～) </a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp; <a href="https://github.com/ickedesign/Canvas_Training/tree/master/001-Canvas%E7%BB%9A%E4%B8%BD%E7%9A%84%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C">文件(,,• ₃ •,,)</a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp;<a href="http://codepen.io/ickedesign/pen/peRvwO">汁源╭( ･ㅂ･)و ̑̑ </a></center>
-
-<h4 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h4><blockquote>
-<p>关于Canvas</p>
+<a id="more"></a>
+<h4 id="i-和-i"><a href="#i-和-i" class="headerlink" title="i++和++i"></a>i++和++i</h4><p>大一的时候上java课，老师讲过了这样的题，想必学过计算机相关的都知道&nbsp; &nbsp; (/▽╲)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</div><div class="line">a=b++;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"a的值是："</span>+a+<span class="string">"，"</span>+<span class="string">"b的值是："</span>+b);</div><div class="line"><span class="comment">//"a的值是：2，b的值是：3"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c=<span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> d=<span class="number">2</span>;</div><div class="line">c=++d;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"c的值是："</span>+c+<span class="string">"，"</span>+<span class="string">"d的值是："</span>+d);</div><div class="line"><span class="comment">//"c的值是：3，d的值是：3"</span></div></pre></td></tr></table></figure>
+<p><code>a=b++</code>是b先把值赋给a，自身再加1；<code>a=++b</code>是b先自身加1，再把值赋给a</p>
+<h4 id="i-和-i-nbsp-在循环中的区别"><a href="#i-和-i-nbsp-在循环中的区别" class="headerlink" title="i++和++i&nbsp; 在循环中的区别"></a>i++和++i&nbsp; 在循环中的区别</h4><ul>
+<li><code>i++</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">  <span class="built_in">console</span>.log(i++);</div><div class="line">  <span class="comment">//依次输出0,2,4</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>++i</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">  <span class="built_in">console</span>.log(++i);</div><div class="line">  <span class="comment">//依次输出1,3,5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对比以上代码，是不是发现什么了&nbsp; &nbsp; (ﾟｰﾟ)</p>
+<h4 id="arr-i-和arr-i-在循环中的区别"><a href="#arr-i-和arr-i-在循环中的区别" class="headerlink" title="arr[i++]和arr[++i]在循环中的区别"></a>arr[i++]和arr[++i]在循环中的区别</h4><ul>
+<li><code>arr[i++]</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">   <span class="built_in">console</span>.log(arr[i++]);</div><div class="line">  <span class="comment">//依次输出11,13,15</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>arr[++i]</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">   <span class="built_in">console</span>.log(arr[++i]);</div><div class="line">  <span class="comment">//依次输出12,14,16</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果数组是奇数个，那么输出<code>arr[++i]</code>的最后一个数会是一个undefined &nbsp; &nbsp; (¯﹃¯)</p>
+<h4 id="arr-i-1和arr-i-1在循环中的区别"><a href="#arr-i-1和arr-i-1在循环中的区别" class="headerlink" title="arr[i++]+=1和arr[++i]+=1在循环中的区别"></a>arr[i++]+=1和arr[++i]+=1在循环中的区别</h4><ul>
+<li><code>arr[i++]+=1</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i++]+=<span class="number">1</span>;</div><div class="line">&#125; </div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"><span class="comment">//输出[2,2,4]</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>arr[++i]+=1</code>在循环中的输出：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[++i]+=<span class="number">1</span>;</div><div class="line">&#125; </div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"><span class="comment">//输出[1,3,3,NaN]</span></div></pre></td></tr></table></figure>
+<p>由于数组是奇数个，所以最后<code>arr[++i]+=1</code>最后的输出结果是NaN，可以通过以下的代码验证</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span>+<span class="number">1</span>);</div><div class="line"><span class="comment">//输出NaN</span></div></pre></td></tr></table></figure>
+<p>好啦，到此为止，是不是理解了arr[i++]和arr[++i]了，现在回到我们的前言了，老师如何清除不符合判断语句的数组</p>
+<h4 id="arr-i-的使用"><a href="#arr-i-的使用" class="headerlink" title="arr[i++]的使用"></a>arr[i++]的使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">5</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">9</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">10</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">6</span>&#125;</div><div class="line">]</div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">  <span class="keyword">if</span>(arr[i].x&lt;<span class="number">4</span>)&#123;</div><div class="line">    arr[cnt++]=arr[i]; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'cnt的值是'</span>+cnt+<span class="string">'，i的值是'</span>+i);</div><div class="line"></div><div class="line">    <span class="comment">//"cnt的值是1，i的值是0"</span></div><div class="line">    <span class="comment">//"cnt的值是2，i的值是3"</span></div><div class="line">  &#125;	</div><div class="line">&#125; </div><div class="line"><span class="keyword">while</span>(arr.length&gt;cnt)&#123;</div><div class="line">  arr.pop();</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">//   [</span></div><div class="line"><span class="comment">//     [object Object] &#123;x: 1&#125;, </span></div><div class="line"><span class="comment">//     [object Object] &#123;x: 3&#125;</span></div><div class="line"><span class="comment">//   ]</span></div></pre></td></tr></table></figure>
+<p>这说明了<strong>第0到cnt-1个留在arr中，cnt到arr.length-1的数组删除</strong>，使用这个方法就可以来去除不符合判断语句的数组了，是不是一个很好的技巧呢</p>
+<blockquote>
+<p>有些我学得还不深，关于<code>i++</code>在循环中的输出也是有点懵，不过我知道过程是啥。梳理一下呗，同学有什么想法么&nbsp; &nbsp; __φ(．．;)</p>
 </blockquote>
-<p>HTML5 &lt;canvas&gt; 标签用于绘制图像（通过脚本，通常是 JavaScript）。<br>不过，&lt;canvas&gt;元素本身并没有绘制能力（它仅仅是图形的容器）， 您必须使用脚本来完成实际的绘图任务。&nbsp;&nbsp;<em>[该叙述来自<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">W3CSCHOOL</a>]</em></p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/post-img/GorgeousCountdown-Sketch.png" class="full-image" alt="Gorgeous Countdown" title="Sketch Effect" /><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/09/20170309-Canvas-Countdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
       
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://icke.site/2017/03/05/20170305-JavaScript-RegExp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Icke">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/05/20170305-JavaScript-RegExp/" itemprop="url">
-                  JavaScript正则表达式基础归纳
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-05T14:02:37+08:00">
-                2017-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/05/20170305-JavaScript-RegExp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/20170305-JavaScript-RegExp/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/03/05/20170305-JavaScript-RegExp/" class="leancloud_visitors" data-flag-title="JavaScript正则表达式基础归纳">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>“请我吃糖(✿◡‿◡))”</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward.jpg" alt="Icke WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
-      
-
-      
-        
-          <blockquote class="blockquote-center"><p><strong>归纳包含以下内容：</strong><br>正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/05/20170305-JavaScript-RegExp/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
+  </div>
 
-    <div>
-      
-    </div>
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/数组/" rel="tag"># 数组</a>
+          
+        </div>
       
 
       
+        
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/09/20170309-Canvas-Countdown/" rel="next" title="Canvas绚丽倒计时学习笔记">
+                <i class="fa fa-chevron-left"></i> Canvas绚丽倒计时学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/10/20170310-JavaScript-arr[i++]/"
+     data-title="关于arr[i++]与arr[++i]"
+     data-content=""
+     data-url="http://icke.site/2017/03/10/20170310-JavaScript-arr[i++]/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
           
           </div>
@@ -822,6 +583,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/10/20170310-JavaScript-arr[i++]/"
+           data-title="关于arr[i++]与arr[++i]" data-url="http://icke.site/2017/03/10/20170310-JavaScript-arr[i++]/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -841,8 +610,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -924,6 +702,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-和-i"><span class="nav-number">2.</span> <span class="nav-text">i++和++i</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-和-i-nbsp-在循环中的区别"><span class="nav-number">3.</span> <span class="nav-text">i++和++i  在循环中的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arr-i-和arr-i-在循环中的区别"><span class="nav-number">4.</span> <span class="nav-text">arr[i++]和arr[++i]在循环中的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arr-i-1和arr-i-1在循环中的区别"><span class="nav-number">5.</span> <span class="nav-text">arr[i++]+=1和arr[++i]+=1在循环中的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arr-i-的使用"><span class="nav-number">6.</span> <span class="nav-text">arr[i++]的使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1031,6 +825,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

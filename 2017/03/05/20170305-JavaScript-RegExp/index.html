@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -117,6 +117,8 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20170124171502903">
 <meta property="og:image" content="http://img.blog.csdn.net/20170124214751418">
 <meta property="og:image" content="http://img.blog.csdn.net/20170124222653164">
+<meta property="og:image" content="http://img.blog.csdn.net/20170125152324662">
+<meta property="og:image" content="http://img.blog.csdn.net/20170125152751892">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125161718514">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125163106517">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125173842533">
@@ -124,7 +126,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20170125185209660">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125185936149">
 <meta property="og:image" content="http://img.blog.csdn.net/20170125200028285">
-<meta property="og:updated_time" content="2017-03-09T16:21:50.874Z">
+<meta property="og:updated_time" content="2017-03-10T07:53:27.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript正则表达式基础归纳">
 <meta name="twitter:description" content="归纳包含以下内容：正则表达式简介、工具使用、RegExp对象、元字符、字符类、范围类、JS预定义类、量词、JS正则的贪婪模式和非贪婪模式、分组、前瞻、JS对象属性、test和exec方法、字符串对象方法">
@@ -136,7 +138,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -700,19 +702,12 @@
 </ul>
 <hr>
 <h4 id="test和exec方法"><a href="#test和exec方法" class="headerlink" title="test和exec方法"></a>test和exec方法</h4><ul>
-<li><strong>test()</strong><br>RegExp.prototype.test(str);<ul>
-<li>用于测试字符串参数中是否存在匹配正则表达式模式的字符串。可以发现，在全局调用下，即对于reg2，在第三次test匹配时出现了false，这是因为在全局调用下lastIndex不为0。</li>
+<li><p><strong>test()</strong><br>RegExp.prototype.test(str);</p>
+<ul>
+<li>用于测试字符串参数中是否存在匹配正则表达式模式的字符串。可以发现，在全局调用下，即对于reg2，在第三次test匹配时出现了false，这是因为在全局调用下lastIndex不为0。<br><img src="http://img.blog.csdn.net/20170125152324662" alt="这里写图片描述"></li>
+<li>每次都实例化reg2可以使test匹配时不出现false,但这花费内存开销。所以当我们想用到test本义时，不用加上/g来进行全局匹配<br><img src="http://img.blog.csdn.net/20170125152751892" alt="这里写图片描述"></li>
 </ul>
 </li>
-</ul>
-<pre><code> ![这里写图片描述](http://img.blog.csdn.net/20170125152324662)
-
-
-- 每次都实例化reg2可以使test匹配时不出现false,但这花费内存开销。
-  所以当我们想用到test本义时，不用加上/g来进行全局匹配
-
-    ![这里写图片描述](http://img.blog.csdn.net/20170125152751892)
-</code></pre><ul>
 <li><p><strong>exec()</strong></p>
 <p>  RegExp.prototype.exec(str);</p>
 <ul>
@@ -969,7 +964,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -991,7 +986,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1084,7 +1079,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -1157,13 +1152,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
