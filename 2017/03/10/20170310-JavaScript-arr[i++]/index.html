@@ -94,12 +94,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于arr[i++]与arr[++i]">
 <meta property="og:url" content="http://icke.site/2017/03/10/20170310-JavaScript-arr[i++]/index.html">
-<meta property="og:site_name" content="标标的博客 | Icke Blog">
+<meta property="og:site_name" content="Icke Blog">
 <meta property="og:description" content="前言
 前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：
 
 123456789101112//及时清空跳出画布的小球，优化页面的内存var cnt=0for(var i=0;i&amp;lt;balls.length;i++)&amp;#123;	if(balls[i].x+radius&amp;gt;0&amp;amp;&amp;amp;balls[i].x-radius&amp;lt;c">
-<meta property="og:updated_time" content="2017-03-11T05:54:00.295Z">
+<meta property="og:updated_time" content="2017-05-05T13:56:53.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于arr[i++]与arr[++i]">
 <meta name="twitter:description" content="前言
@@ -139,7 +139,7 @@
 
 
 
-  <title> 关于arr[i++]与arr[++i] | 标标的博客 | Icke Blog </title>
+  <title> 关于arr[i++]与arr[++i] | Icke Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -194,7 +194,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">标标的博客 | Icke Blog</span>
+        <span class="site-title">Icke Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -330,7 +330,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
+      <meta itemprop="name" content="Icke Blog">
     </span>
 
     
@@ -440,10 +440,10 @@
 <p>前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//及时清空跳出画布的小球，优化页面的内存</span></div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;balls.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(balls[i].x+radius&gt;<span class="number">0</span>&amp;&amp;balls[i].x-radius&lt;canvasWidth)&#123;</div><div class="line">		<span class="comment">//小球数组中的第0个到cnt-1个是在canvas画布中</span></div><div class="line">		balls[cnt++]=balls[i];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//删除前面的数组使用balls.shift()</span></div><div class="line"><span class="keyword">while</span>(balls.length&gt;cnt)&#123;</div><div class="line">	balls.pop();<span class="comment">//删除第cnt个到balls.length-1个数组</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>一开始挺懵的，<code>arr[i++]</code>是啥(ﾟｰﾟ)，于是开始一步一步地探索</p>
+<p>一开始挺懵的，<code>arr[i++]</code>是啥，于是开始一步一步地探索</p>
 <hr>
 <a id="more"></a>
-<h4 id="i-和-i"><a href="#i-和-i" class="headerlink" title="i++和++i"></a>i++和++i</h4><p>大一的时候上java课，老师讲过了这样的题，想必学过计算机相关的都知道&nbsp; &nbsp; (/▽╲)</p>
+<h4 id="i-和-i"><a href="#i-和-i" class="headerlink" title="i++和++i"></a>i++和++i</h4><p>大一的时候上java课，老师讲过了这样的题，想必学过计算机相关的都知道&nbsp; &nbsp; </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</div><div class="line">a=b++;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"a的值是："</span>+a+<span class="string">"，"</span>+<span class="string">"b的值是："</span>+b);</div><div class="line"><span class="comment">//"a的值是：2，b的值是：3"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c=<span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> d=<span class="number">2</span>;</div><div class="line">c=++d;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"c的值是："</span>+c+<span class="string">"，"</span>+<span class="string">"d的值是："</span>+d);</div><div class="line"><span class="comment">//"c的值是：3，d的值是：3"</span></div></pre></td></tr></table></figure>
 <p><code>a=b++</code>是b先把值赋给a，自身再加1；<code>a=++b</code>是b先自身加1，再把值赋给a</p>
 <h4 id="i-和-i-nbsp-在循环中的区别"><a href="#i-和-i-nbsp-在循环中的区别" class="headerlink" title="i++和++i&nbsp; 在循环中的区别"></a>i++和++i&nbsp; 在循环中的区别</h4><ul>
@@ -454,7 +454,7 @@
 <li><code>++i</code>在循环中的输出：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">  <span class="built_in">console</span>.log(++i);</div><div class="line">  <span class="comment">//依次输出1,3,5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对比以上代码，是不是发现什么了&nbsp; &nbsp; (ﾟｰﾟ)</p>
+<p>对比以上代码，是不是发现什么了&nbsp; &nbsp; </p>
 <h4 id="arr-i-和arr-i-在循环中的区别"><a href="#arr-i-和arr-i-在循环中的区别" class="headerlink" title="arr[i++]和arr[++i]在循环中的区别"></a>arr[i++]和arr[++i]在循环中的区别</h4><ul>
 <li><code>arr[i++]</code>在循环中的输出：</li>
 </ul>
@@ -463,7 +463,7 @@
 <li><code>arr[++i]</code>在循环中的输出：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">   <span class="built_in">console</span>.log(arr[++i]);</div><div class="line">  <span class="comment">//依次输出12,14,16</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果数组是奇数个，那么输出<code>arr[++i]</code>的最后一个数会是一个undefined &nbsp; &nbsp; (¯﹃¯)</p>
+<p>如果数组是奇数个，那么输出<code>arr[++i]</code>的最后一个数会是一个undefined</p>
 <h4 id="arr-i-1和arr-i-1在循环中的区别"><a href="#arr-i-1和arr-i-1在循环中的区别" class="headerlink" title="arr[i++]+=1和arr[++i]+=1在循环中的区别"></a>arr[i++]+=1和arr[++i]+=1在循环中的区别</h4><ul>
 <li><code>arr[i++]+=1</code>在循环中的输出：</li>
 </ul>
@@ -477,9 +477,6 @@
 <p>好啦，到此为止，是不是理解了arr[i++]和arr[++i]了，现在回到我们的前言了，老师如何清除不符合判断语句的数组</p>
 <h4 id="arr-i-的使用"><a href="#arr-i-的使用" class="headerlink" title="arr[i++]的使用"></a>arr[i++]的使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">5</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">9</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">10</span>&#125;,</div><div class="line">	&#123;<span class="attr">x</span>: <span class="number">6</span>&#125;</div><div class="line">]</div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">  <span class="keyword">if</span>(arr[i].x&lt;<span class="number">4</span>)&#123;</div><div class="line">    arr[cnt++]=arr[i]; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'cnt的值是'</span>+cnt+<span class="string">'，i的值是'</span>+i);</div><div class="line"></div><div class="line">    <span class="comment">//"cnt的值是1，i的值是0"</span></div><div class="line">    <span class="comment">//"cnt的值是2，i的值是3"</span></div><div class="line">  &#125;	</div><div class="line">&#125; </div><div class="line"><span class="keyword">while</span>(arr.length&gt;cnt)&#123;</div><div class="line">  arr.pop();</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">//   [</span></div><div class="line"><span class="comment">//     [object Object] &#123;x: 1&#125;, </span></div><div class="line"><span class="comment">//     [object Object] &#123;x: 3&#125;</span></div><div class="line"><span class="comment">//   ]</span></div></pre></td></tr></table></figure>
 <p>这说明了<strong>第0到cnt-1个留在arr中，cnt到arr.length-1的数组删除</strong>，使用这个方法就可以来去除不符合判断语句的数组了，是不是一个很好的技巧呢</p>
-<blockquote>
-<p>有些我学得还不深，关于<code>i++</code>在循环中的输出也是有点懵，不过我知道过程是啥。梳理一下呗，同学有什么想法么&nbsp; &nbsp; __φ(．．;)</p>
-</blockquote>
 
       
     </div>
@@ -680,15 +677,6 @@
                     <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/ickedesign" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
                 </a>
               </span>
             

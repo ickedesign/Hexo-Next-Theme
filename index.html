@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="志标, Icke, 标标, ickedesign, @ickedesign, 标标的博客, Icke Blog, 博客, 个人网站, 互联网, 前端, 设计" />
+  <meta name="keywords" content="互联网, 前端, 设计" />
 
 
 
@@ -89,12 +89,12 @@
 
 <meta name="description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标标的博客 | Icke Blog">
+<meta property="og:title" content="Icke Blog">
 <meta property="og:url" content="http://icke.site/index.html">
-<meta property="og:site_name" content="标标的博客 | Icke Blog">
+<meta property="og:site_name" content="Icke Blog">
 <meta property="og:description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标标的博客 | Icke Blog">
+<meta name="twitter:title" content="Icke Blog">
 <meta name="twitter:description" content="前端、设计、书籍、领悟一起发现更大的世界吧ヾ(o◕∀◕)ﾉヾ">
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title> 标标的博客 | Icke Blog </title>
+  <title> Icke Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -186,7 +186,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">标标的博客 | Icke Blog</span>
+        <span class="site-title">Icke Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -322,7 +322,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
+      <meta itemprop="name" content="Icke Blog">
     </span>
 
     
@@ -432,12 +432,9 @@
 
       
         
-          <blockquote class="blockquote-center"><p><strong>总结包含以下内容：</strong><br>CSS hack、Flex布局、Box-Sizing、清除浮动、水平垂直居中、em和rem的区别、max-width、@media媒体查询、CSS伪元素、column</p>
+          <blockquote class="blockquote-center"><p><strong>总结包含以下内容：</strong><br>CSS hack、清除浮动(clearfix hack)、CSS伪类和伪元素、<code>Box-Sizing</code>、水平居中和垂直居中、em和rem的区别、<code>max-width</code>、@media媒体查询、<code>columns</code>、@import加载CSS文件和link的区别、使用CDN、Flex布局</p>
 </blockquote>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/post-img/Study-CSS-Layout.jpg" class="full-image" alt="Study CSS Layout" title="Study CSS Layout" /><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<blockquote>
-<p>大家想更好学习CSS布局的话，可以看看<a href="http://www.ruanyifeng.com/blog/">阮一峰老师</a>和<a href="http://www.zhangxinxu.com/">张鑫旭老师</a>的博客。本文是看完<a href="http://zh.learnlayout.com/">学习CSS布局</a>做的一些小总结，还加入了自己之前有点懵的布局方面的知识。</p>
-</blockquote>
 <hr>
           <!--noindex-->
           <div class="post-button text-center">
@@ -493,7 +490,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
+      <meta itemprop="name" content="Icke Blog">
     </span>
 
     
@@ -607,7 +604,7 @@
 <p>前几天做Canvas倒计时的时候，慕课网的老师讲到了一个及时清除不在画布中的小球的做法。以下是实现代码：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//及时清空跳出画布的小球，优化页面的内存</span></div><div class="line"><span class="keyword">var</span> cnt=<span class="number">0</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;balls.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(balls[i].x+radius&gt;<span class="number">0</span>&amp;&amp;balls[i].x-radius&lt;canvasWidth)&#123;</div><div class="line">		<span class="comment">//小球数组中的第0个到cnt-1个是在canvas画布中</span></div><div class="line">		balls[cnt++]=balls[i];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//删除前面的数组使用balls.shift()</span></div><div class="line"><span class="keyword">while</span>(balls.length&gt;cnt)&#123;</div><div class="line">	balls.pop();<span class="comment">//删除第cnt个到balls.length-1个数组</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>一开始挺懵的，<code>arr[i++]</code>是啥(ﾟｰﾟ)，于是开始一步一步地探索</p>
+<p>一开始挺懵的，<code>arr[i++]</code>是啥，于是开始一步一步地探索</p>
 <hr>
           <!--noindex-->
           <div class="post-button text-center">
@@ -663,7 +660,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
+      <meta itemprop="name" content="Icke Blog">
     </span>
 
     
@@ -773,7 +770,7 @@
 
       
         
-          <center><a href="https://ickebemiu.github.io/countdown/countdown.html">演示(ˉ▽￣～) </a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp; <a href="https://github.com/ickedesign/Canvas_Training/tree/master/001-Canvas%E7%BB%9A%E4%B8%BD%E7%9A%84%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C">文件(,,• ₃ •,,)</a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp;<a href="http://codepen.io/ickedesign/pen/peRvwO">汁源╭( ･ㅂ･)و ̑̑ </a></center>
+          <center><a href="https://ickebemiu.github.io/countdown/countdown.html">演示</a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp; <a href="https://github.com/ickedesign/Canvas_Training/tree/master/001-Canvas%E7%BB%9A%E4%B8%BD%E7%9A%84%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C">文件</a>&nbsp; &nbsp; <strong>|</strong>&nbsp; &nbsp;<a href="http://codepen.io/ickedesign/pen/peRvwO">汁源</a></center>
 
 <h4 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h4><blockquote>
 <p>关于Canvas</p>
@@ -835,7 +832,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="标标的博客 | Icke Blog">
+      <meta itemprop="name" content="Icke Blog">
     </span>
 
     
@@ -1069,15 +1066,6 @@
                     <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/ickedesign" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
                 </a>
               </span>
             
